@@ -1,4 +1,4 @@
-package com.example.localibback.vehicules;
+package com.example.localibback.vehicles;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Vehicule {
+public class Vehicle {
     @Id
     private String id;
     private String brand;

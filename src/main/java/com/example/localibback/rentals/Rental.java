@@ -1,7 +1,7 @@
 package com.example.localibback.rentals;
 
 import com.example.localibback.users.User;
-import com.example.localibback.vehicules.Vehicule;
+import com.example.localibback.vehicles.Vehicle;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +23,7 @@ public class Rental {
     @DBRef
     private User renter;
     @DBRef
-    private Vehicule vehicule;
+    private Vehicle vehicle;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateStart;
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -31,6 +31,6 @@ public class Rental {
 
     public double getTotalPrice() {
         Period period = Period.between(this.dateStart, this.dateEnd);
-        return period.getDays() * this.getVehicule().getPrice();
+        return period.getDays() * this.getVehicle().getPrice();
     }
 }
