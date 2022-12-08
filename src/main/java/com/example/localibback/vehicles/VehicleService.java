@@ -1,5 +1,8 @@
 package com.example.localibback.vehicles;
 
+import com.example.localibback.users.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -7,6 +10,7 @@ import java.util.List;
 
 public class VehicleService {
     private final VehicleRepository vehicleRepository;
+    private final Logger logger = LoggerFactory.getLogger(VehicleService.class);
 
     public VehicleService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
@@ -30,6 +34,7 @@ public class VehicleService {
      * @return
      */
     public Vehicle save(Vehicle entity) {
+        logger.info("The vehicle has been successfully created : " + entity.toString());
         return vehicleRepository.save(entity);
     }
 

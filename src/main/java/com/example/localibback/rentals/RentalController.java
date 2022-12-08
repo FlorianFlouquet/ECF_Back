@@ -22,8 +22,8 @@ public class RentalController {
     }
 
     @PostMapping("")
-    public Rental save(@RequestBody Rental entity) {
-        return rentalService.save(entity);
+    public void save(@RequestBody Rental entity) {
+        rentalService.save(entity);
     }
 
     @GetMapping("{id}")

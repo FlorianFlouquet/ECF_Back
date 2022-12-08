@@ -1,6 +1,9 @@
 package com.example.localibback.users;
 
+import com.example.localibback.rentals.RentalService;
 import com.example.localibback.vehicles.Vehicle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -8,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserService {
+    private final Logger logger = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -28,6 +32,7 @@ public class UserService {
      * @return
      */
     public User save(User entity) {
+        logger.info("The user has been successfully created : " + entity.toString());
         return userRepository.save(entity);
     }
 

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class RentalService {
-    private Logger logger = LoggerFactory.getLogger(RentalService.class);
+    private final Logger logger = LoggerFactory.getLogger(RentalService.class);
     private final RentalRepository rentalRepository;
     private final VehicleService vehicleService;
 
@@ -34,20 +34,19 @@ public class RentalService {
      * @param entity
      * @return
      */
-    public Rental save(Rental entity) {
+    public void save(Rental entity) {
         // Check if the rental start date is before its end date
         if(entity.getDateStart().isBefore(entity.getDateEnd())) {
             // Get all rentals documents from the database with the same vehicle_id as the entity (parameter)
             List<Rental> rentals = this.rentalRepository.findRentalsByVehicleId(entity.getVehicle().getId());
-            logger.warn(rentals.toString());
             // Check for the vehicle's availability
             if(this.checkAvailability(rentals, entity.getDateStart(), entity.getDateEnd())) {
                 Vehicle vehicle = this.vehicleService.findById(entity.getVehicle().getId());
                 vehicle.setAvailable(false);
                 vehicleService.update(vehicle, vehicle.getId());
                 entity.setVehicle(vehicle);
-                logger.info("The rental has successfully been created : " + entity.toString());
-                return rentalRepository.save(entity);
+                logger.info("The rental has been successfully created : " + entity.toString());
+                rentalRepository.save(entity);
             } else {
                 throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE);
             }

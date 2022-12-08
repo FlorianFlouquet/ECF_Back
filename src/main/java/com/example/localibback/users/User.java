@@ -13,6 +13,7 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 @NoArgsConstructor
@@ -37,7 +38,8 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    @Transient
     public int getAge() {
-        return (int) ChronoUnit.YEARS.between(this.birthDate, LocalDate.now());
+        return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 }
