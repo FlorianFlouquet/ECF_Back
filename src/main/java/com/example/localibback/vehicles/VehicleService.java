@@ -52,6 +52,12 @@ public class VehicleService {
         vehicleRepository.deleteById(id);
     }
 
+    /**
+     * Update a vehicle
+     * @param vehicle
+     * @param id
+     * @return
+     */
     public Vehicle update(Vehicle vehicle, String id) {
         Vehicle vehicleFromDB = this.findById(id);
         if(vehicleFromDB != null) {
