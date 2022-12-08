@@ -52,6 +52,19 @@ public class VehicleService {
         vehicleRepository.deleteById(id);
     }
 
+    public Vehicle update(Vehicle vehicle, String id) {
+        Vehicle vehicleFromDB = this.findById(id);
+        if(vehicleFromDB != null) {
+            vehicleFromDB.setAvailable(vehicle.isAvailable());
+            vehicleFromDB.setBrand(vehicle.getBrand());
+            vehicleFromDB.setModel(vehicle.getModel());
+            vehicleFromDB.setPrice(vehicle.getPrice());
+            vehicleFromDB.setState(vehicle.getState());
+            vehicleFromDB.setType(vehicle.getType());
+        }
+        return this.save(vehicleFromDB);
+    }
+
     /*
      * Methods for filtering vehicles
      */

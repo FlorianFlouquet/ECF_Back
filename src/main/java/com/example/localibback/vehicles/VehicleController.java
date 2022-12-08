@@ -35,6 +35,10 @@ public class VehicleController {
         vehicleService.deleteById(id);
     }
 
+    @PutMapping("{id}")
+    public Vehicle updateVehicle(@PathVariable String id, @RequestBody Vehicle vehicle) {
+        return vehicleService.update(vehicle, id);
+    }
 
     /**
      * Method to search specific vehicles by their types, availability, models or brand
