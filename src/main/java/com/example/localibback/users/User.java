@@ -29,6 +29,14 @@ public class User {
     private String email;
     private String phoneNumber;
 
+    public User(String surname, String firstname, LocalDate birthDate, String email, String phoneNumber) {
+        this.surname = surname;
+        this.firstname = firstname;
+        this.birthDate = birthDate;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int getAge() {
         return (int) ChronoUnit.YEARS.between(this.birthDate, LocalDate.now());
     }

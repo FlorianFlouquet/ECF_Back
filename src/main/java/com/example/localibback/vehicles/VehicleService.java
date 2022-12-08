@@ -45,11 +45,18 @@ public class VehicleService {
     }
 
     /**
-     * Delete a vehicle fromd the database
+     * Delete a vehicle from the database
      * @param id
      */
     public void deleteById(String id) {
         vehicleRepository.deleteById(id);
+    }
+
+    /**
+     * Delete all vehicles from the database
+     */
+    public void deleteAll() {
+        this.vehicleRepository.deleteAll();
     }
 
     /**

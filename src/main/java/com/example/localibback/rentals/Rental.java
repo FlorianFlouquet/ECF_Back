@@ -29,6 +29,13 @@ public class Rental {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateEnd;
 
+    public Rental(User renter, Vehicle vehicle, LocalDate dateStart, LocalDate dateEnd) {
+        this.renter = renter;
+        this.vehicle = vehicle;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+    }
+
     /**
      * Calculate the price of the rental according to the duration of the rental and
      * the price of car's price

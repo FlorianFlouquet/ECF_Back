@@ -91,4 +91,11 @@ public class RentalService {
     public void deleteById(String id) {
         rentalRepository.deleteById(id);
     }
+
+    /**
+     * Delete all rentals from the database
+     */
+    public void deleteAll() {
+        this.rentalRepository.deleteAll();
+    }
 }

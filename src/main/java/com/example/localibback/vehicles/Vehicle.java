@@ -16,8 +16,18 @@ public class Vehicle {
     private String brand;
     private String model;
     private String state;
-    private String license_number;
+    private String licenseNumber;
     private String type;
     private Double price;
     private boolean available;
+
+    public Vehicle(String brand, String model, String state, String licenseNumber, String type, Double price, boolean available) {
+        this.brand = brand;
+        this.model = model;
+        this.state = state;
+        this.licenseNumber = licenseNumber;
+        this.type = type;
+        this.price = price;
+        this.available = available;
+    }
 }

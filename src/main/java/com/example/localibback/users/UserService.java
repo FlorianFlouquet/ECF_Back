@@ -90,4 +90,11 @@ public class UserService {
         return userRepository.findUsersByFirstname(firstname);
     }
 
+    /**
+     * Delete all users from the database
+     */
+    public void deleteAll() {
+        this.userRepository.deleteAll();
+    }
+
 }
