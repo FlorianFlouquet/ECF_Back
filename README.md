@@ -5,11 +5,11 @@
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Requests List](#requests-list)
+* [Request Paths](#request-paths)
 * [Entities format](#entities-format)
 
 ## General info
-This is a simple back-end for the Localib application
+This is a simple back-end for the Localib application.
 
 ## Requirements
 
