@@ -49,7 +49,8 @@ Launch [Postman](https://www.postman.com/) and send one of the request showed be
 ### Request Paths
 
 ```
-#### USERS
+
+USERS
 - FIND all : /users (GET)
 - FIND one : /users/id (GET)
 - CREATE : /users (POST)
@@ -57,7 +58,8 @@ Launch [Postman](https://www.postman.com/) and send one of the request showed be
 - UPDATE one : /users/id (PUT)
 - SEARCH by firstname : /users/search?firstname=firstname
 - SEARCH by surname : /users/search?surname=surname
-#### VEHICLES
+
+VEHICLES
 - FIND all : /vehicles (GET)
 - FIND one : /vehicles/id (GET)
 - CREATE one : /vehicles (POST)
@@ -67,12 +69,14 @@ Launch [Postman](https://www.postman.com/) and send one of the request showed be
 - SEARCH by model : /users/search?model=model
 - SEARCH by availability : /users/search?availability=availability
 - SEARCH by type : /users/search?type=type
-#### RENTALS
+
+RENTALS
 - FIND all : /rentals (GET)
 - FIND one : /rentals/id (GET)
 - CREATE : /rentals (POST)
 - DELETE one : /rentals/id (DELETE)
-#### DEBUGG
+
+DEBUGG
 - CLEAR database : /debugg/clear (DELETE)
 - INITIALIZE database with a few entities : /debugg/init (POST)
 ```
