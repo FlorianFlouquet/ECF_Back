@@ -29,6 +29,11 @@ public class Rental {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateEnd;
 
+    /**
+     * Calculate the price of the rental according to the duration of the rental and
+     * the price of car's price
+     * @return
+     */
     public double getTotalPrice() {
         Period period = Period.between(this.dateStart, this.dateEnd);
         return period.getDays() * this.getVehicle().getPrice();
